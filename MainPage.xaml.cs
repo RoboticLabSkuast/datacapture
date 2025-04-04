@@ -16,6 +16,7 @@ namespace datacapture
             TreeIdEntry.Text = App.treeidqr;
 
         }
+        
 
     }
 

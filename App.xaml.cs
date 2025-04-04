@@ -2,7 +2,7 @@
 {
     public partial class App : Application
     {
-        public static string treeidqr = '';
+        public static string treeidqr = "";
         public static string saveornotpath = FileSystem.Current.CacheDirectory + "saveornot";
         public App()
         {

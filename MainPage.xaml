@@ -29,8 +29,8 @@
             <Label Text="Orchard ID" />
             <Entry Placeholder="Enter Orchard ID" />
 
-            <Label x:Name="TreeIdEntry" Text="Tree ID (QR Code ID)" />
-            <Entry Placeholder="Enter Tree ID" />
+            <Label Text="Tree ID (QR Code ID)" />
+            <Entry x:Name="TreeIdEntry" Placeholder="Enter Tree ID" />
 
             <Label Text="Agroclimatic Zone" />
             <Entry Placeholder="Enter Zone" />
