@@ -13,10 +13,17 @@ namespace datacapture
         private async void OnScanQrCodeClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Qrcode());
-            TreeIdEntry.Text = App.treeidqr;
+            
 
         }
-        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Refresh your UI or data here
+            TreeIdEntry.Text = App.treeidqr;
+        }
+
 
     }
 
