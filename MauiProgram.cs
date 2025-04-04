@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Camera.MAUI;
+using CommunityToolkit.Maui;
 
 namespace datacapture
 {
@@ -11,6 +12,7 @@ namespace datacapture
             builder
                 .UseMauiApp<App>()
                 .UseMauiCameraView()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

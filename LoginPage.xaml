@@ -3,63 +3,60 @@
     x:Class="datacapture.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Login"
-  
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray800}}" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout
             Padding="30"
             Spacing="25"
             VerticalOptions="Center">
 
-                <VerticalStackLayout>
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="32"
-                        HorizontalTextAlignment="Center"
-                        Text="SKUAST-K Plant"
-                        TextColor="{StaticResource Primary}"/>
-                    <Label
-                        FontSize="16"
-                        HorizontalTextAlignment="Center"
-                        Text="Data Management System"
-                        />
-                </VerticalStackLayout>
-            
-         
+            <VerticalStackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="32"
+                    HorizontalTextAlignment="Center"
+                    Text="SKUAST-K Plant"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    Text="Data Management System" />
+            </VerticalStackLayout>
+
+
 
             <Grid Margin="0,30,0,0">
-                <Label 
-            Text="Username or Email"
-            FontSize="12"
-            Margin="5,0,0,0"
-            TextColor="Gray"
-        />
+                <Label
+                    Margin="5,0,0,0"
+                    FontSize="12"
+                    Text="Username or Email"
+                    TextColor="Gray" />
                 <Entry
-            x:Name="username"
-            Margin="0,15,0,10"
-            ClearButtonVisibility="WhileEditing"
-            Keyboard="Email"
-            Placeholder="Enter username"
-        />
+                    x:Name="username"
+                    Margin="0,15,0,10"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Email"
+                    Placeholder="Enter username" />
             </Grid>
 
-            <!-- Password Field -->
+            <!--  Password Field  -->
             <Grid>
-                <Label 
-            Text="Password"
-            FontSize="12"
-            Margin="5,0,0,0"
-            TextColor="Gray"
-        />
+                <Label
+                    Margin="5,0,0,0"
+                    FontSize="12"
+                    Text="Password"
+                    TextColor="Gray" />
                 <Entry
-            x:Name="password"
-            Margin="0,15,0,10"
-            ClearButtonVisibility="WhileEditing"
-            IsPassword="True"
-            Placeholder="Enter password"
-        />
+                    x:Name="password"
+                    Margin="0,15,0,10"
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="True"
+                    Placeholder="Enter password" />
             </Grid>
             <HorizontalStackLayout>
                 <CheckBox
@@ -67,10 +64,7 @@
                     Margin="0,0,0,10"
                     VerticalOptions="Center"
                     Color="{StaticResource Primary}" />
-                <Label
-                    Text="Remember me"
-                  
-                    VerticalOptions="Center" />
+                <Label Text="Remember me" VerticalOptions="Center" />
             </HorizontalStackLayout>
 
 
