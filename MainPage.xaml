@@ -16,7 +16,7 @@
                 BackgroundColor="#007AFF"
                 Clicked="OnScanQrCodeClicked"
                 HorizontalOptions="Center"
-                Text="Scan QR Code for Tree ID"
+                Text="Scan QR Code"
                 TextColor="White" />
 
 
