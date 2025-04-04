@@ -1,0 +1,13 @@
+﻿namespace datacapture
+{
+    public partial class App : Application
+    {
+        public static string saveornotpath = FileSystem.Current.CacheDirectory + "saveornot";
+        public App()
+        {
+            InitializeComponent();
+
+            MainPage = new NavigationPage(new LoadingPage()); ;
+        }
+    }
+}

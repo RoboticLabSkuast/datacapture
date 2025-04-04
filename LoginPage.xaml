@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="datacapture.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login"
+    BackgroundColor="#F5F7FA"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25"
+            VerticalOptions="CenterAndExpand">
+
+            <Frame
+                Margin="0,0,0,20"
+                Padding="20"
+                BackgroundColor="White"
+                CornerRadius="20">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="32"
+                        HorizontalTextAlignment="Center"
+                        Text="SKUAST Portal"
+                        TextColor="#1A73E8" />
+                    <Label
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="Secure Data Management System"
+                        TextColor="#666666" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Entry
+                x:Name="username"
+                Margin="0,0,0,10"
+                BackgroundColor="White"
+                ClearButtonVisibility="WhileEditing"
+                Keyboard="Email"
+                Placeholder="Enter Username/Email"
+                PlaceholderColor="#999999"
+                TextColor="#333333" />
+
+            <Entry
+                x:Name="password"
+                Margin="0,0,0,10"
+                BackgroundColor="White"
+                ClearButtonVisibility="WhileEditing"
+                IsPassword="True"
+                Placeholder="Enter Password"
+                PlaceholderColor="#999999"
+                TextColor="#333333" />
+            <HorizontalStackLayout>
+                <CheckBox
+                    x:Name="rememberMe"
+                    Margin="0,0,0,10"
+                    VerticalOptions="Center"
+                    Color="#1A73E8" />
+                <Label
+                    Text="Remember me"
+                    TextColor="#666666"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+
+            <Label
+                x:Name="errorMessage"
+                Margin="0,0,0,10"
+                FontSize="14"
+                IsVisible="False"
+                TextColor="Red" />
+
+            <Button
+                x:Name="loginButton"
+                Padding="15"
+                BackgroundColor="#1A73E8"
+                Clicked="Login_Handler"
+                CornerRadius="12"
+                FontAttributes="Bold"
+                IsEnabled="False"
+                Text="Sign In"
+                TextColor="White" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <Label Text="Forgot Password?" TextColor="#1A73E8">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Register" TextColor="#1A73E8">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
