@@ -59,7 +59,7 @@ public partial class Qrcode : ContentPage
 
                 if (scannedText.ToLower().Contains("haris"))
                 {
-
+                    App.treeidqr = scannedText;
 
                     cameraView.BarCodeDetectionEnabled = false; // Stop scanning
                     await Navigation.PopAsync();
