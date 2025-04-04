@@ -4,63 +4,72 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Login"
-    BackgroundColor="#F5F7FA"
+  
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False">
     <ScrollView>
         <VerticalStackLayout
             Padding="30"
             Spacing="25"
-            VerticalOptions="CenterAndExpand">
+            VerticalOptions="Center">
 
-            <Frame
-                Margin="0,0,0,20"
-                Padding="20"
-                BackgroundColor="White"
-                CornerRadius="20">
                 <VerticalStackLayout>
                     <Label
                         FontAttributes="Bold"
                         FontSize="32"
                         HorizontalTextAlignment="Center"
-                        Text="SKUAST Portal"
-                        TextColor="#1A73E8" />
+                        Text="SKUAST-K Plant"
+                        TextColor="{StaticResource Primary}"/>
                     <Label
                         FontSize="16"
                         HorizontalTextAlignment="Center"
-                        Text="Secure Data Management System"
-                        TextColor="#666666" />
+                        Text="Data Management System"
+                        />
                 </VerticalStackLayout>
-            </Frame>
+            
+         
 
-            <Entry
-                x:Name="username"
-                Margin="0,0,0,10"
-                BackgroundColor="White"
-                ClearButtonVisibility="WhileEditing"
-                Keyboard="Email"
-                Placeholder="Enter Username/Email"
-                PlaceholderColor="#999999"
-                TextColor="#333333" />
+            <Grid Margin="0,30,0,0">
+                <Label 
+            Text="Username or Email"
+            FontSize="12"
+            Margin="5,0,0,0"
+            TextColor="Gray"
+        />
+                <Entry
+            x:Name="username"
+            Margin="0,15,0,10"
+            ClearButtonVisibility="WhileEditing"
+            Keyboard="Email"
+            Placeholder="Enter username"
+        />
+            </Grid>
 
-            <Entry
-                x:Name="password"
-                Margin="0,0,0,10"
-                BackgroundColor="White"
-                ClearButtonVisibility="WhileEditing"
-                IsPassword="True"
-                Placeholder="Enter Password"
-                PlaceholderColor="#999999"
-                TextColor="#333333" />
+            <!-- Password Field -->
+            <Grid>
+                <Label 
+            Text="Password"
+            FontSize="12"
+            Margin="5,0,0,0"
+            TextColor="Gray"
+        />
+                <Entry
+            x:Name="password"
+            Margin="0,15,0,10"
+            ClearButtonVisibility="WhileEditing"
+            IsPassword="True"
+            Placeholder="Enter password"
+        />
+            </Grid>
             <HorizontalStackLayout>
                 <CheckBox
                     x:Name="rememberMe"
                     Margin="0,0,0,10"
                     VerticalOptions="Center"
-                    Color="#1A73E8" />
+                    Color="{StaticResource Primary}" />
                 <Label
                     Text="Remember me"
-                    TextColor="#666666"
+                  
                     VerticalOptions="Center" />
             </HorizontalStackLayout>
 
@@ -75,7 +84,7 @@
             <Button
                 x:Name="loginButton"
                 Padding="15"
-                BackgroundColor="#1A73E8"
+                BackgroundColor="{StaticResource Primary}"
                 Clicked="Login_Handler"
                 CornerRadius="12"
                 FontAttributes="Bold"
@@ -84,12 +93,12 @@
                 TextColor="White" />
 
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
-                <Label Text="Forgot Password?" TextColor="#1A73E8">
+                <Label Text="Forgot Password?" TextColor="{StaticResource Tertiary}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Register" TextColor="#1A73E8">
+                <Label Text="Register" TextColor="{StaticResource Tertiary}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnRegisterTapped" />
                     </Label.GestureRecognizers>
