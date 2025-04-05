@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:datacapture"
     Title="datacapture"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
         Title="Upload Data"
@@ -15,5 +15,9 @@
         Title="View Data"
         ContentTemplate="{DataTemplate local:ViewData}"
         Route="ViewData" />
+    <ShellContent
+        Title="Upload Data"
+        ContentTemplate="{DataTemplate local:Offlinedata}"
+        Route="Offlinedata" />
 
 </Shell>

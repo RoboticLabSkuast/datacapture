@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Camera.MAUI;
 using CommunityToolkit.Maui;
+using datacapture.services;
 
 namespace datacapture
 {
@@ -18,7 +19,13 @@ namespace datacapture
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "datalist.db3");
+
+            
+            builder.Services.AddSingleton(s => new DatabaseService(dbPath));
            
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<Offlinedata>();
 
 
 

@@ -17,8 +17,8 @@
                 HorizontalOptions="Center"
                 Text="Orchard Data Schema (Detailed Parameters)" />
             <HorizontalStackLayout>
-                <Label Text="Tree ID (QR Code ID)" />
-                <Label x:Name="TreeIdEntry" />
+                <Label Text="Tree ID (QR Code ID):" />
+                <Label x:Name="TreeId" />
             </HorizontalStackLayout>
 
             <Button
