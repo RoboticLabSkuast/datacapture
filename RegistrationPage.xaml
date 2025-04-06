@@ -10,11 +10,7 @@
     </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
-            <Label
-                FontAttributes="Bold"
-                FontSize="24"
-                HorizontalOptions="Center"
-                Text="New Tree Registration)" />
+
             <HorizontalStackLayout>
                 <Label Text="Tree ID (QR Code ID):" />
                 <Label x:Name="TreeId" />

@@ -8,21 +8,21 @@
     Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Upload Data"
+        Title="Orchard Data Schema"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
     <ShellContent
-        Title="Sync Offline Data"
+        Title="Upload Offline Data"
         ContentTemplate="{DataTemplate local:Offlinedata}"
         Route="Offlinedata" />
 
-    <ShellContent
+    <!--<ShellContent
         Title="View Data"
         ContentTemplate="{DataTemplate local:ViewData}"
-        Route="ViewData" />
+        Route="ViewData" />-->
     <ShellContent
-        Title="Tree Registration"
+        Title="New Tree Registration"
         ContentTemplate="{DataTemplate local:RegistrationPage}"
         Route="RegirtrationPage" />
 
@@ -40,4 +40,96 @@
         IconImageSource="logout_icon.png"
         IsDestructive="True"
         Text="Logout" />
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <VerticalStackLayout BackgroundColor="{StaticResource Primary}" HeightRequest="200">
+                <Image
+                    Aspect="AspectFit"
+                    MaximumHeightRequest="150"
+                    Opacity="1"
+                    Source="image.png" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    Text="SKUAST-K Plant"
+                    TextColor="{AppThemeBinding Light={StaticResource Gray100},
+                                                Dark={StaticResource White}}" />
+                <Label
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    Text="Data Management System"
+                    TextColor="{AppThemeBinding Light={StaticResource Gray100},
+                                                Dark={StaticResource White}}" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <VerticalStackLayout>
+
+                <Label
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    Text="CAIML SKUAST-K" />
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="©️2025 All Rights Reserved" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Image
+                        Margin="5"
+                        HeightRequest="30"
+                        Opacity=".8"
+                        Source="{Binding Icon}" />
+                    <Label
+                        Margin="10,0"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="Fill"
+                        HorizontalTextAlignment="Start"
+                        Text="{Binding Text}"
+                        VerticalTextAlignment="Center" />
+                </HorizontalStackLayout>
+                <BoxView
+                    BackgroundColor="{StaticResource Primary}"
+                    HeightRequest="1"
+                    Opacity=".1" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Image
+                        Margin="5"
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        Opacity="1"
+                        Source="{Binding FlyoutIcon}"
+                        VerticalOptions="Center" />
+                    <Label
+                        Margin="10,0"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="Fill"
+                        HorizontalTextAlignment="Start"
+                        Text="{Binding Title}"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <BoxView
+                    BackgroundColor="{StaticResource Primary}"
+                    HeightRequest="1"
+                    Opacity=".5" />
+            </VerticalStackLayout>
+
+        </DataTemplate>
+    </Shell.ItemTemplate>
 </Shell>

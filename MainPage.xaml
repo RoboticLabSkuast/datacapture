@@ -11,11 +11,7 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
-            <Label
-                FontAttributes="Bold"
-                FontSize="24"
-                HorizontalOptions="Center"
-                Text="Orchard Data Schema (Detailed Parameters)" />
+
             <HorizontalStackLayout>
                 <Label Text="Tree ID (QR Code ID):" />
                 <Label x:Name="TreeId" />
