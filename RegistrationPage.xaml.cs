@@ -89,8 +89,5 @@ public partial class RegistrationPage : ContentPage
             await DisplayAlert("Error", "Upload failed.", "OK");
          */
     }
-    private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
+    
 }
