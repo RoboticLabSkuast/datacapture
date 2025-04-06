@@ -6,5 +6,9 @@
         {
             InitializeComponent();
         }
+        public void OnLogoutClicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new LoginPage();
+        }
     }
 }

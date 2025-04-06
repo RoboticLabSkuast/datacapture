@@ -4,29 +4,33 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    Title="Offlinedata"
+    Title="Sync Offline Data"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>
-    <VerticalStackLayout>
+    <Grid Padding="20" RowSpacing="10">
 
-        <ListView x:Name="ItemsListView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!--  ListView takes all available space  -->
+            <RowDefinition Height="Auto" />
+            <!--  Button fits its content  -->
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="ItemsListView" Grid.Row="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-
                         <Grid
                             Padding="10"
                             ColumnSpacing="10"
                             RowSpacing="5">
-                            <!--  Define Columns  -->
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <!--  First Column: Id  -->
                             <Label
                                 Grid.Column="0"
                                 FontAttributes="Bold"
@@ -34,7 +38,6 @@
                                 Text="{Binding Id}"
                                 VerticalOptions="Center" />
 
-                            <!--  Second Column: Name  -->
                             <Label
                                 Grid.Column="1"
                                 FontSize="Medium"
@@ -43,14 +46,14 @@
                                 TextColor="{StaticResource Primary}"
                                 VerticalOptions="Center" />
                         </Grid>
-
-
-
-
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Clicked="uploaddatahandler" Text="Upload Data" />
-    </VerticalStackLayout>
+
+        <Button
+            Grid.Row="1"
+            Clicked="uploaddatahandler"
+            Text="Sync Data" />
+    </Grid>
 </ContentPage>

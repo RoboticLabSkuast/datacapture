@@ -11,13 +11,29 @@
         Title="Upload Data"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Offine Data"
+        ContentTemplate="{DataTemplate local:Offlinedata}"
+        Route="Offlinedata" />
+
     <ShellContent
         Title="View Data"
         ContentTemplate="{DataTemplate local:ViewData}"
         Route="ViewData" />
     <ShellContent
-        Title="Upload Data"
-        ContentTemplate="{DataTemplate local:Offlinedata}"
-        Route="Offlinedata" />
+        Title="Tree Registration"
+        ContentTemplate="{DataTemplate local:RegistrationPage}"
+        Route="RegirtrationPage" />
 
+
+    <ShellContent
+        Title="Setting"
+        ContentTemplate="{DataTemplate local:SettingPage}"
+        Route="SettingPage" />
+    <MenuItem
+        Clicked="OnLogoutClicked"
+        IconImageSource="logout_icon.png"
+        IsDestructive="True"
+        Text="Logout" />
 </Shell>
