@@ -113,18 +113,5 @@ public partial class LoginPage : ContentPage
         base.OnDisappearing();
     }
 
-    /* async private void login_handler(object sender, EventArgs e)
-     {
-         File.Delete(App.saveornotpath);
-         if ((username.Text ==null) & (password.Text == null))
-         {
-             await DisplayAlert("Error", "No username or password", "ok");
-         }
-         else
-         {
-             File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("1"));
-             Application.Current.MainPage = new AppShell();
-         }
-         File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("2"));
-     }*/
+   
 }
