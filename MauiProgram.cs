@@ -26,6 +26,7 @@ namespace datacapture
            
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<Offlinedata>();
+            builder.Services.AddSingleton<RegistrationPage>();
 
 
 
