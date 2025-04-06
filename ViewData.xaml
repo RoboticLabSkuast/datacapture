@@ -3,11 +3,11 @@
     x:Class="datacapture.ViewData"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="ViewData">
+    Title="View Data">
     <VerticalStackLayout>
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
+            Text="Will Be Available"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

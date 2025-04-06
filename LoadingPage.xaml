@@ -3,7 +3,12 @@
     x:Class="datacapture.LoadingPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="LoadingPage">
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="LoadingPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
     <StackLayout
         Margin="0,50"
         Padding="50"

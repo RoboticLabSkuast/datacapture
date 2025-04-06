@@ -13,7 +13,7 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="Offine Data"
+        Title="Sync Offline Data"
         ContentTemplate="{DataTemplate local:Offlinedata}"
         Route="Offlinedata" />
 
@@ -28,7 +28,7 @@
 
 
     <ShellContent
-        Title="Setting"
+        Title="Settings"
         ContentTemplate="{DataTemplate local:SettingPage}"
         Route="SettingPage" />
     <MenuItem

@@ -48,12 +48,13 @@ public partial class LoginPage : ContentPage
         catch (Exception ex)
         {
             ShowError($"Login failed: {ex.Message}");
+            File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("2"));
         }
         finally
         {
             loginButton.Text = "Sign In";
             loginButton.IsEnabled = true;
-            File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("2"));
+           
         }
     }
 
