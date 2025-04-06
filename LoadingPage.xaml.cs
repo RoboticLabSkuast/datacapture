@@ -17,9 +17,11 @@ public partial class LoadingPage : ContentPage
             string check = JsonSerializer.Deserialize<string>(File.ReadAllText(App.saveornotpath));
             if (check.Equals("1"))
             {
-                await Task.Delay(100);
-                Application.Current.MainPage = new AppShell();
-
+                //await Task.Delay(100);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Application.Current.MainPage = new AppShell();
+                });
             }
             else
             {

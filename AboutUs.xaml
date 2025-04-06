@@ -4,24 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="About Us">
-    <VerticalStackLayout Padding="20">
-        <Label
-            FontAttributes="Bold"
-            FontSize="Large"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="Center"
-            Text="Sher-e-Kashmir University of Agricultural Sciences  And Technology of Kashmir"
-            VerticalOptions="Center" />
-        <Label
-            FontSize="Small"
-            HorizontalOptions="Center"
-            HorizontalTextAlignment="Center"
-            Text="Main Campus, Shalimar, Srinagar-190025"
-            VerticalOptions="Center" />
-        <Label
-            FontSize="Small"
-            HorizontalOptions="Fill"
-            HorizontalTextAlignment="Center"
-            Text="KUAST-K is building a world-class team of researchers and engineers to leverage the  applications of Agri-4.0 technologies (Artificial Intelligence, Machine Learning, Deep  Learning, IoT and automation, drone and robotics) in data-driven and smart agricultural  practices for crop/soil monitoring, disease diagnosis and prediction, crop yield forecasts,  alerting the farmers about the changes in weather pattern and market fluctuations, generation  and dissemination of the crop and location specific advisories,  automation of the operations  using drones and Agri-bots, creating          e-market platforms like e-bioshops etc.  As such, the  team shall strive to build the state-of-art laboratory facilities in AI and ML, IoT and automation,  computational biology, cloud computing and fab lab for designing the sensors, IoTs and machines to work autonomously." />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Sher-e-Kashmir University of Agricultural Sciences  And Technology of Kashmir"
+                    VerticalOptions="Center" />
+                <Label
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Main Campus, Shalimar, Srinagar-190025"
+                    VerticalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Label
+                FontSize="Small"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                Text="SKUAST-K is building a world-class team of researchers and engineers to leverage the  applications of Agri-4.0 technologies (Artificial Intelligence, Machine Learning, Deep  Learning, IoT and automation, drone and robotics) in data-driven and smart agricultural  practices for crop/soil monitoring, disease diagnosis and prediction, crop yield forecasts,  alerting the farmers about the changes in weather pattern and market fluctuations, generation  and dissemination of the crop and location specific advisories,  automation of the operations  using drones and Agri-bots, creating          e-market platforms like e-bioshops etc.  As such, the  team shall strive to build the state-of-art laboratory facilities in AI and ML, IoT and automation,  computational biology, cloud computing and fab lab for designing the sensors, IoTs and machines to work autonomously." />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -19,12 +19,12 @@
 
             <Button
                 Clicked="OnScanQrCodeClicked"
-                Text="Scan QR Code"
+                Text="Click Here for Scan QR Code"
                 TextColor="White" />
 
             <!--  Dynamic Data  -->
             <Label Text="Take a Photo" />
-            <Button Clicked="OnTakePhotoClicked" Text="Take a Photo" />
+            <Button Clicked="OnTakePhotoClicked" Text="Click Here To Take a Photo" />
             <Label
                 x:Name="imageNameLabel"
                 FontAttributes="Bold"
@@ -135,6 +135,7 @@
 
             <Label Text="Fruit Quality Parameters" />
             <Entry Placeholder="Weight, Size, Color, Sugar" />
+
 
             <Button
                 Clicked="uploadclicked"

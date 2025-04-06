@@ -38,9 +38,14 @@ public partial class LoginPage : ContentPage
 
         try
         {
-           
-           
+            if (rememberMe.IsChecked)
+            {
                 File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("1"));
+            }
+            else { File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("2")); }
+
+
+
                 Application.Current.MainPage = new AppShell();
            
            

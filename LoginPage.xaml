@@ -7,7 +7,7 @@
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior  StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout

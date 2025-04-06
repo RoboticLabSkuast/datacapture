@@ -4,10 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Settings">
-    <VerticalStackLayout>
+    <Grid>
         <Label
             HorizontalOptions="Center"
             Text="Will Be Available Soon"
             VerticalOptions="Center" />
-    </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>

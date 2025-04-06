@@ -25,111 +25,66 @@
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 Text="No image selected" />
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Phenology and Growth Stages" />
 
 
-            <Label Text="Phenological Stage" />
-            <Picker
-                x:Name="MyPicker"
-                Title="Choose an item"
-                SelectedIndexChanged="OnPickerSelectedIndexChanged">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Bud</x:String>
-                        <x:String>Fruit</x:String>
-                        <x:String>Cherry</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
 
-            <Label Text="Stage Date" />
+
+            <Label Text="Variety / Cultivar (e.g., Fuji, Gala, Granny Smith)" />
+            <Entry Placeholder="Enter Variety or Cultivar" />
+
+            <Label Text="Rootstock Type (e.g., M9, M26)" />
+            <Entry Placeholder="Enter Rootstock Type" />
+
+            <Label Text="Grafting Date" />
             <DatePicker />
 
+            <Label Text="Plant Age (Years)" />
+            <Entry Keyboard="Numeric" Placeholder="Enter Age in Years" />
 
-
-            <Label Text="Growth and Development Observations" />
-            <Entry Placeholder="Shoot, Leaf, Root Observations" />
-
-            <Label Text="Blossom Density" />
-            <Entry Keyboard="Numeric" Placeholder="Count per branch or tree" />
-
-            <!--  Management Practices  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Management Practices" />
-
-            <Label Text="Inputs Applied" />
-            <Entry Placeholder="Growth regulators, nutrients" />
-
-            <Label Text="Pesticide/Fungicide Type" />
-            <Entry Placeholder="Name of chemical" />
-
-            <Label Text="Application Date" />
+            <Label Text="Planting Date" />
             <DatePicker />
 
-            <Label Text="Quantity Applied" />
-            <Entry Keyboard="Numeric" Placeholder="Amount used" />
+            <Label Text="Location" />
+            <Entry Placeholder="Enter Location" />
 
-            <Label Text="Fertilizer Type" />
-            <Entry Placeholder="Name of fertilizer" />
+            <Label Text="GPS Coordinates" />
+            <Entry Placeholder="Latitude, Longitude" />
 
-            <Label Text="Fertilizer Application Date" />
-            <DatePicker />
+            <Label Text="Region / Village / District" />
+            <Entry Placeholder="Enter Region / Village / District" />
 
-            <Label Text="Fertilizer Quantity" />
-            <Entry Keyboard="Numeric" Placeholder="Dosage applied" />
+            <Label Text="Orchard Name" />
+            <Entry Placeholder="Enter Orchard Name" />
 
-            <!--  Health and Disease Monitoring  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Health and Disease Monitoring" />
+            <Label Text="Row and Column Position (In the orchard layout)" />
+            <Entry Placeholder="Row, Column" />
 
-            <Label Text="Observed Disease" />
-            <Entry Placeholder="Name of disease" />
+            <Label Text="Ownership / Farm Name" />
+            <Entry Placeholder="Enter Ownership or Farm Name" />
 
-            <Label Text="Disease Severity (Low/Med/High)" />
-            <Entry Placeholder="Severity level" />
+            <Label Text="Plant Source / Nursery" />
+            <Entry Placeholder="Enter Nursery Name" />
 
-            <Label Text="Disease Photographs" />
-            <Entry Placeholder="Link or image path" />
+            <Label Text="Plant Status (e.g., Active, Dead, Replanted)" />
+            <Entry Placeholder="Enter Plant Status" />
 
-            <Label Text="Pest Incidence" />
-            <Entry Placeholder="Type of pest" />
 
-            <Label Text="Pest Severity (Low/Med/High)" />
-            <Entry Placeholder="Severity level" />
 
-            <Label Text="Treatment Applied" />
-            <Entry Placeholder="Control measures taken" />
+            <Label Text="Canopy Size / Tree Spread (Meters)" />
+            <Entry Keyboard="Numeric" Placeholder="Enter Canopy Size" />
 
-            <Label Text="Nutrient Deficiency Symptoms" />
-            <Entry Placeholder="E.g., yellowing leaves" />
+            <Label Text="Tree Height (Meters or Feet)" />
+            <Entry Keyboard="Numeric" Placeholder="Enter Tree Height" />
 
-            <Label Text="Hailstorm/Wind Damage Reports" />
-            <Entry Placeholder="Weather-related damages" />
+            <Label Text="Trunk Diameter / Girth (at 1m above ground)" />
+            <Entry Keyboard="Numeric" Placeholder="Enter Trunk Diameter" />
 
-            <!--  Yield and Productivity  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Yield and Productivity" />
 
-            <Label Text="Fruit Set Percentage (%)" />
-            <Entry Keyboard="Numeric" Placeholder="% of flowers to fruits" />
 
-            <Label Text="Harvest Date" />
-            <DatePicker />
-
-            <Label Text="Yield per Tree (kg)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter yield" />
-
-            <Label Text="Fruit Quality Parameters" />
-            <Entry Placeholder="Weight, Size, Color, Sugar" />
+            <Label Text="Spacing Between Plants (Meters)" />
+            <Entry Keyboard="Numeric" Placeholder="Enter Spacing" />
+            <Label Text="Live Status" />
+            <Entry Placeholder="Live or Dead" />
 
             <Button
                 Clicked="uploadclicked"

@@ -10,7 +10,7 @@ public partial class Offlinedata : ContentPage
 	{
 		InitializeComponent();
         _databaseService = databaseService;
-        LoadItems();
+       
     }
     private async void LoadItems()
     {
@@ -19,6 +19,15 @@ public partial class Offlinedata : ContentPage
         {
             List<Datalist> items = await _databaseService.GetAllListsAsync();
             ItemsListView.ItemsSource = items;
+            if (items.Count == 0)
+            {
+                await DisplayAlert("No Data", "No items found in the database.", "OK");
+                nodata.IsVisible = true;
+            }
+            else
+            {
+                nodata.IsVisible = false;
+            }
         }
         catch (Exception ex)
         {
@@ -27,8 +36,11 @@ public partial class Offlinedata : ContentPage
     }
     private async void uploaddatahandler(object sender, EventArgs e)
     {
-        await _databaseService.ClearListsAsync();
-        await DisplayAlert("Success", "Image uploaded successfully!", "OK");
+        if (!nodata.IsVisible)
+        {
+            await _databaseService.ClearListsAsync();
+            await DisplayAlert("Success", "Image uploaded successfully!", "OK");
+        }
         LoadItems(); // Refresh the ListView
     }
     protected override  void OnAppearing()

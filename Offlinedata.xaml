@@ -17,7 +17,11 @@
             <RowDefinition Height="Auto" />
             <!--  Button fits its content  -->
         </Grid.RowDefinitions>
-
+        <Label
+            x:Name="nodata"
+            HorizontalOptions="Center"
+            Text="No Data available for uploading"
+            VerticalOptions="Center" />
         <ListView x:Name="ItemsListView" Grid.Row="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -54,7 +58,7 @@
         <Button
             Grid.Row="1"
             Clicked="uploaddatahandler"
-            Text="Sync Data" />
+            Text="Click Here To Upload Data" />
     </Grid>
 
 </ContentPage>
