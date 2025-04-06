@@ -31,6 +31,10 @@
         Title="Settings"
         ContentTemplate="{DataTemplate local:SettingPage}"
         Route="SettingPage" />
+    <ShellContent
+        Title="About Us"
+        ContentTemplate="{DataTemplate local:AboutUs}"
+        Route="AboutUs" />
     <MenuItem
         Clicked="OnLogoutClicked"
         IconImageSource="logout_icon.png"
