@@ -48,7 +48,7 @@ public partial class Qrcode : ContentPage
         };
     }
 
-    async private void CameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs e)
+    private void CameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs e)
     {
         var scannedText = e.Result?.FirstOrDefault()?.Text;
 

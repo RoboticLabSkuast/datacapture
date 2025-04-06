@@ -20,71 +20,76 @@
 
             <!--  Dynamic Data  -->
 
-            <Label
-                x:Name="imageNameLabel"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Text="No image selected" />
 
 
 
 
-            <Label Text="Variety / Cultivar (e.g., Fuji, Gala, Granny Smith)" />
-            <Entry Placeholder="Enter Variety or Cultivar" />
+            <Label Text="Variety" />
+            <Entry x:Name="VarietyEntry" Placeholder="Enter Variety or Cultivar" />
 
-            <Label Text="Rootstock Type (e.g., M9, M26)" />
-            <Entry Placeholder="Enter Rootstock Type" />
+            <Label Text="Rootstock Type" />
+            <Entry x:Name="RootstockTypeEntry" Placeholder="Enter Rootstock Type" />
 
             <Label Text="Grafting Date" />
-            <DatePicker />
+            <DatePicker x:Name="GraftingDatePicker" />
 
             <Label Text="Plant Age (Years)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter Age in Years" />
+            <Entry
+                x:Name="PlantAgeEntry"
+                Keyboard="Numeric"
+                Placeholder="Enter Age in Years" />
 
             <Label Text="Planting Date" />
-            <DatePicker />
+            <DatePicker x:Name="PlantingDatePicker" />
 
             <Label Text="Location" />
-            <Entry Placeholder="Enter Location" />
+            <Entry x:Name="LocationEntry" Placeholder="Enter Location" />
 
             <Label Text="GPS Coordinates" />
-            <Entry Placeholder="Latitude, Longitude" />
+            <Entry x:Name="GPSCoordinatesEntry" Placeholder="Latitude, Longitude" />
 
-            <Label Text="Region / Village / District" />
-            <Entry Placeholder="Enter Region / Village / District" />
+            <Label Text="Region" />
+            <Entry x:Name="RegionEntry" Placeholder="Enter Region / Village / District" />
 
             <Label Text="Orchard Name" />
-            <Entry Placeholder="Enter Orchard Name" />
+            <Entry x:Name="OrchardNameEntry" Placeholder="Enter Orchard Name" />
 
-            <Label Text="Row and Column Position (In the orchard layout)" />
-            <Entry Placeholder="Row, Column" />
+            <Label Text="Row and Column Position" />
+            <Entry x:Name="RowColumnPositionEntry" Placeholder="Row, Column" />
 
-            <Label Text="Ownership / Farm Name" />
-            <Entry Placeholder="Enter Ownership or Farm Name" />
+            <Label Text="Ownership" />
+            <Entry x:Name="OwnershipEntry" Placeholder="Enter Ownership or Farm Name" />
 
-            <Label Text="Plant Source / Nursery" />
-            <Entry Placeholder="Enter Nursery Name" />
+            <Label Text="Plant Source" />
+            <Entry x:Name="PlantSourceEntry" Placeholder="Enter Nursery Name" />
 
             <Label Text="Plant Status (e.g., Active, Dead, Replanted)" />
-            <Entry Placeholder="Enter Plant Status" />
-
-
+            <Entry x:Name="PlantStatusEntry" Placeholder="Enter Plant Status" />
 
             <Label Text="Canopy Size / Tree Spread (Meters)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter Canopy Size" />
+            <Entry
+                x:Name="CanopySizeEntry"
+                Keyboard="Numeric"
+                Placeholder="Enter Canopy Size" />
 
             <Label Text="Tree Height (Meters or Feet)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter Tree Height" />
+            <Entry
+                x:Name="TreeHeightEntry"
+                Keyboard="Numeric"
+                Placeholder="Enter Tree Height" />
 
             <Label Text="Trunk Diameter / Girth (at 1m above ground)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter Trunk Diameter" />
-
-
+            <Entry
+                x:Name="TrunkDiameterEntry"
+                Keyboard="Numeric"
+                Placeholder="Enter Trunk Diameter" />
 
             <Label Text="Spacing Between Plants (Meters)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter Spacing" />
-            <Label Text="Live Status" />
-            <Entry Placeholder="Live or Dead" />
+            <Entry
+                x:Name="SpacingBetweenPlantsEntry"
+                Keyboard="Numeric"
+                Placeholder="Enter Spacing" />
+
 
             <Button
                 Clicked="uploadclicked"

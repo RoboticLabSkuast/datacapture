@@ -13,7 +13,7 @@ public partial class LoginPage : ContentPage
         BindingContext = this;
     }
 
-    private async void Login_Handler(object sender, EventArgs e)
+    private  void Login_Handler(object sender, EventArgs e)
     {
         File.Delete(App.saveornotpath);
         errorMessage.IsVisible = false;
@@ -46,7 +46,7 @@ public partial class LoginPage : ContentPage
 
 
 
-                Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new AppShell();
            
            
         }
