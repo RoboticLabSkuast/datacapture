@@ -7,97 +7,119 @@
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource PrimaryDark}" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30"
-            Spacing="25"
-            VerticalOptions="Center">
-
-            <VerticalStackLayout>
+    <ScrollView Padding="0">
+        <Grid Padding="0" BackgroundColor="{StaticResource PrimaryDark}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <!--  ListView takes all available space  -->
+                <RowDefinition Height="1.5*" />
+                <!--  Button fits its content  -->
+            </Grid.RowDefinitions>
+            <VerticalStackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image
+                    Aspect="AspectFit"
+                    MaximumHeightRequest="150"
+                    Source="image.png" />
                 <Label
                     FontAttributes="Bold"
                     FontSize="32"
                     HorizontalTextAlignment="Center"
                     Text="SKUAST-K Plant"
-                    TextColor="{StaticResource Primary}" />
+                    TextColor="{StaticResource White}" />
                 <Label
                     FontSize="16"
                     HorizontalTextAlignment="Center"
-                    Text="Data Management System" />
+                    Text="Data Management System"
+                    TextColor="{StaticResource White}" />
             </VerticalStackLayout>
 
+            <Border
+                Grid.Row="1"
+                Margin="0"
+                Padding="30"
+                Background="{AppThemeBinding Light={StaticResource White},
+                                             Dark={StaticResource Gray900}}"
+                Stroke="{AppThemeBinding Light={StaticResource White},
+                                         Dark={StaticResource Gray900}}"
+                StrokeShape="RoundRectangle 40,40,0,0">
+                <VerticalStackLayout>
 
 
-            <Grid Margin="0,30,0,0">
-                <Label
-                    Margin="5,0,0,0"
-                    FontSize="12"
-                    Text="Username or Email"
-                    TextColor="Gray" />
-                <Entry
-                    x:Name="username"
-                    Margin="0,15,0,10"
-                    ClearButtonVisibility="WhileEditing"
-                    Keyboard="Email"
-                    Placeholder="Enter username" />
-            </Grid>
-
-            <!--  Password Field  -->
-            <Grid>
-                <Label
-                    Margin="5,0,0,0"
-                    FontSize="12"
-                    Text="Password"
-                    TextColor="Gray" />
-                <Entry
-                    x:Name="password"
-                    Margin="0,15,0,10"
-                    ClearButtonVisibility="WhileEditing"
-                    IsPassword="True"
-                    Placeholder="Enter password" />
-            </Grid>
-            <HorizontalStackLayout>
-                <CheckBox
-                    x:Name="rememberMe"
-                    Margin="0,0,0,10"
-                    VerticalOptions="Center"
-                    Color="{StaticResource Primary}" />
-                <Label Text="Remember me" VerticalOptions="Center" />
-            </HorizontalStackLayout>
 
 
-            <Label
-                x:Name="errorMessage"
-                Margin="0,0,0,10"
-                FontSize="14"
-                IsVisible="False"
-                TextColor="Red" />
 
-            <Button
-                x:Name="loginButton"
-                Padding="15"
-                BackgroundColor="{StaticResource Primary}"
-                Clicked="Login_Handler"
-                CornerRadius="12"
-                FontAttributes="Bold"
-                IsEnabled="False"
-                Text="Sign In"
-                TextColor="White" />
+                    <Grid Margin="0,30,0,0">
+                        <Label
+                            Margin="5,0,0,0"
+                            FontSize="12"
+                            Text="Username or Email"
+                            TextColor="Gray" />
+                        <Entry
+                            x:Name="username"
+                            Margin="0,15,0,10"
+                            ClearButtonVisibility="WhileEditing"
+                            Keyboard="Email"
+                            Placeholder="Enter username" />
+                    </Grid>
 
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
-                <Label Text="Forgot Password?" TextColor="{StaticResource Tertiary}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label Text="Register" TextColor="{StaticResource Tertiary}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
+                    <!--  Password Field  -->
+                    <Grid>
+                        <Label
+                            Margin="5,0,0,0"
+                            FontSize="12"
+                            Text="Password"
+                            TextColor="Gray" />
+                        <Entry
+                            x:Name="password"
+                            Margin="0,15,0,10"
+                            ClearButtonVisibility="WhileEditing"
+                            IsPassword="True"
+                            Placeholder="Enter password" />
+                    </Grid>
+                    <HorizontalStackLayout>
+                        <CheckBox
+                            x:Name="rememberMe"
+                            Margin="0,0,0,10"
+                            VerticalOptions="Center"
+                            Color="{StaticResource Primary}" />
+                        <Label Text="Remember me" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+
+                    <Label
+                        x:Name="errorMessage"
+                        Margin="0,0,0,10"
+                        FontSize="14"
+                        IsVisible="False"
+                        TextColor="Red" />
+
+                    <Button
+                        x:Name="loginButton"
+                        Padding="15"
+                        BackgroundColor="{StaticResource Primary}"
+                        Clicked="Login_Handler"
+                        CornerRadius="50"
+                        FontAttributes="Bold"
+                        IsEnabled="False"
+                        Text="Sign In"
+                        TextColor="White" />
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                        <Label Text="Forgot Password?" TextColor="{StaticResource Tertiary}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="Register" TextColor="{StaticResource Tertiary}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
     </ScrollView>
 </ContentPage>
