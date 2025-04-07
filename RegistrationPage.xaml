@@ -59,8 +59,13 @@
             <Label Text="Location" />
             <Entry x:Name="LocationEntry" Placeholder="Enter Location" />
 
-            <Label Text="GPS Coordinates" />
-            <Entry x:Name="GPSCoordinatesEntry" Placeholder="Latitude, Longitude" />
+            <Label Text="Click to get GPS Coordinates ">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GetCurrentLocationAsync" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label x:Name="GPSCoordinatesEntry" />
 
             <Label Text="Region" />
             <Entry x:Name="RegionEntry" Placeholder="Enter Region / Village / District" />

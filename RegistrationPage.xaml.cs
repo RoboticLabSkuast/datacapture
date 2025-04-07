@@ -89,5 +89,47 @@ public partial class RegistrationPage : ContentPage
             await DisplayAlert("Error", "Upload failed.", "OK");
          */
     }
-    
+    public async void GetCurrentLocationAsync(object sender, EventArgs e)
+    {
+        try
+        {
+            var location = await Geolocation.GetLastKnownLocationAsync();
+
+            if (location == null)
+            {
+                // Force a fresh location if none cached
+                location = await Geolocation.GetLocationAsync(new GeolocationRequest
+                {
+                    DesiredAccuracy = GeolocationAccuracy.High,
+                    Timeout = TimeSpan.FromSeconds(10)
+                });
+            }
+
+            if (location != null)
+            {
+                GPSCoordinatesEntry.Text=$"Latitude: {location.Latitude}, Longitude: {location.Longitude}";
+               
+            }
+        }
+        catch (FeatureNotSupportedException)
+        {
+            await DisplayAlert("Error","GPS not supported on this device.","OK");
+        }
+        catch (FeatureNotEnabledException)
+        {
+            await DisplayAlert("Error", "Location is disabled.", "OK");
+        }
+        catch (PermissionException)
+        {
+            await DisplayAlert("Error", "Location permission not granted.", "OK");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Unexpected error: {ex.Message}", "OK");
+        }
+
+       
+    }
+
+
 }

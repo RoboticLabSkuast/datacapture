@@ -1,6 +1,8 @@
 namespace datacapture;
 using Camera.MAUI.ZXing;
 using Camera.MAUI;
+using datacapture.services;
+
 public partial class Qrcode : ContentPage
 {
     public Qrcode()
@@ -51,14 +53,31 @@ public partial class Qrcode : ContentPage
     private void CameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs e)
     {
         var scannedText = e.Result?.FirstOrDefault()?.Text;
+       // Encrption encrption= new Encrption();
 
         if (!string.IsNullOrEmpty(scannedText))
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
+                /* String orginal;
+                 try { 
+                 orginal = encrption.Decrypt(scannedText, "haris");
+                 }
+                 catch
+                 {
+
+                     orginal = "";
+                     return;
+                 }
+               if (orginal.ToLower().Contains("haris"))
+                {
+                    
+                    App.treeidqr = orginal;
+                 */
 
                 if (scannedText.ToLower().Contains("haris"))
                 {
+                    
                     App.treeidqr = scannedText;
 
                     cameraView.BarCodeDetectionEnabled = false; // Stop scanning

@@ -10,6 +10,7 @@ namespace datacapture
         private readonly DatabaseService _databaseService;
         private FileResult _imageFile;
         private byte[] _imageData;
+        
 
         public MainPage(DatabaseService databaseService)
         {
