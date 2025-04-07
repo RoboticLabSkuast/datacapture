@@ -25,7 +25,7 @@
         ContentTemplate="{DataTemplate local:ViewData}"
         Route="ViewData" />-->
     <ShellContent
-        Title="New Tree Registration"
+        Title="Plant Registration"
         ContentTemplate="{DataTemplate local:RegistrationPage}"
         Route="RegirtrationPage" />
 
@@ -45,8 +45,9 @@
         Text="Logout" />
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <VerticalStackLayout BackgroundColor="{StaticResource Primary}" HeightRequest="200">
+            <VerticalStackLayout BackgroundColor="{StaticResource Primary}" HeightRequest="250">
                 <Image
+                    Margin="10"
                     Aspect="AspectFit"
                     MaximumHeightRequest="150"
                     Opacity="1"
@@ -130,7 +131,7 @@
                 <BoxView
                     BackgroundColor="{StaticResource Primary}"
                     HeightRequest="1"
-                    Opacity=".5" />
+                    Opacity=".2" />
             </VerticalStackLayout>
 
         </DataTemplate>

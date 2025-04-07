@@ -12,24 +12,38 @@
         <VerticalStackLayout Padding="20" Spacing="10">
 
             <HorizontalStackLayout>
-                <Label Text="Tree ID (QR Code ID):" />
+                <Label Text="Plant ID (QR Code ID):" />
                 <Label x:Name="TreeId" />
             </HorizontalStackLayout>
 
-            <Button Clicked="OnScanQrCodeClicked" Text="Scan QR Code" />
+            <Button
+                Clicked="OnScanQrCodeClicked"
+                CornerRadius="20"
+                MaximumWidthRequest="300"
+                Text="Scan QR Code">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Button.Shadow>
+            </Button>
 
             <!--  Dynamic Data  -->
 
 
 
-
+            <Label Text="Crop Name" />
+            <Entry x:Name="cropname" Placeholder="Enter Crop Name" />
 
             <Label Text="Variety" />
             <Entry x:Name="VarietyEntry" Placeholder="Enter Variety or Cultivar" />
 
             <Label Text="Rootstock Type" />
             <Entry x:Name="RootstockTypeEntry" Placeholder="Enter Rootstock Type" />
-
+            <Label Text="Agro Climatic Zone" />
+            <Entry x:Name="Agroclimaticzone" Placeholder="Enter Zone Name" />
             <Label Text="Grafting Date" />
             <DatePicker x:Name="GraftingDatePicker" />
 
@@ -93,8 +107,17 @@
 
             <Button
                 Clicked="uploadclicked"
-                CornerRadius="12"
-                Text="Register Tree" />
+                CornerRadius="20"
+                MaximumWidthRequest="300"
+                Text="Register Tree">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Button.Shadow>
+            </Button>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

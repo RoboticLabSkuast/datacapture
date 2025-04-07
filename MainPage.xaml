@@ -13,131 +13,307 @@
         <VerticalStackLayout Padding="20" Spacing="10">
 
             <HorizontalStackLayout>
-                <Label Text="Tree ID (QR Code ID):" />
+                <Label Text="Plant ID (QR Code ID):" />
                 <Label x:Name="TreeId" />
             </HorizontalStackLayout>
 
             <Button
                 Clicked="OnScanQrCodeClicked"
-                CornerRadius="50"
-                Text="Click Here for Scan QR Code" />
+                CornerRadius="20"
+                MaximumWidthRequest="300"
+                Text="Click Here for Scan QR Code">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Button.Shadow>
+            </Button>
 
             <!--  Dynamic Data  -->
             <Label Text="Take a Photo" />
             <Button
                 Clicked="OnTakePhotoClicked"
-                CornerRadius="50"
-                Text="Click Here To Take a Photo" />
+                CornerRadius="20"
+                MaximumWidthRequest="300"
+                Text="Click Here To Take a Photo">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Button.Shadow>
+            </Button>
             <Label
                 x:Name="imageNameLabel"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 Text="No image selected" />
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Phenology and Growth Stages" />
+            <!--  Pheenological Practices  -->
+            <Border
+                Background="{AppThemeBinding Light={StaticResource White},
+                                             Dark={StaticResource Gray600}}"
+                StrokeShape="RoundRectangle 5"
+                StrokeThickness="0">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Border
+                        Padding="8"
+                        Background="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource Gray900}}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 5">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{StaticResource Gray900}"
+                                Opacity="0.7"
+                                Radius="10"
+                                Offset="0,0" />
+                        </Border.Shadow>
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Phenology and Growth Stages"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                        Dark={StaticResource White}}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="phenologyTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <VerticalStackLayout
+                        x:Name="phenologylist"
+                        Padding="10"
+                        IsVisible="False">
+                        <Label Text="Phenological Stage" />
+                        <Picker
+                            x:Name="MyPicker"
+                            Title="Choose an item"
+                            SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Bud</x:String>
+                                    <x:String>Fruit</x:String>
+                                    <x:String>Cherry</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <Label Text="Stage Date" />
+                        <DatePicker />
 
 
-            <Label Text="Phenological Stage" />
-            <Picker
-                x:Name="MyPicker"
-                Title="Choose an item"
-                SelectedIndexChanged="OnPickerSelectedIndexChanged">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Bud</x:String>
-                        <x:String>Fruit</x:String>
-                        <x:String>Cherry</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
 
-            <Label Text="Stage Date" />
-            <DatePicker />
+                        <Label Text="Growth and Development Observations" />
+                        <Entry Placeholder="Shoot, Leaf, Root Observations" />
 
-
-
-            <Label Text="Growth and Development Observations" />
-            <Entry Placeholder="Shoot, Leaf, Root Observations" />
-
-            <Label Text="Blossom Density" />
-            <Entry Keyboard="Numeric" Placeholder="Count per branch or tree" />
-
+                        <Label Text="Blossom Density" />
+                        <Entry Keyboard="Numeric" Placeholder="Count per branch or tree" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
             <!--  Management Practices  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Management Practices" />
+            <Border
+                Background="{AppThemeBinding Light={StaticResource White},
+                                             Dark={StaticResource Gray600}}"
+                StrokeShape="RoundRectangle 5"
+                StrokeThickness="0">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Border
+                        Padding="8"
+                        Background="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource Gray900}}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 5">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{StaticResource Gray900}"
+                                Opacity="0.7"
+                                Radius="10"
+                                Offset="0,0" />
+                        </Border.Shadow>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Management Practices"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                        Dark={StaticResource White}}">
 
-            <Label Text="Inputs Applied" />
-            <Entry Placeholder="Growth regulators, nutrients" />
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ManagementTapped" />
+                            </Label.GestureRecognizers>
 
-            <Label Text="Pesticide/Fungicide Type" />
-            <Entry Placeholder="Name of chemical" />
+                        </Label>
+                    </Border>
+                    <VerticalStackLayout
+                        x:Name="managementlist"
+                        Padding="10"
+                        IsVisible="False">
 
-            <Label Text="Application Date" />
-            <DatePicker />
+                        <Label Text="Inputs Applied" />
+                        <Entry Placeholder="Growth regulators, nutrients" />
 
-            <Label Text="Quantity Applied" />
-            <Entry Keyboard="Numeric" Placeholder="Amount used" />
+                        <Label Text="Pesticide/Fungicide Type" />
+                        <Entry Placeholder="Name of chemical" />
 
-            <Label Text="Fertilizer Type" />
-            <Entry Placeholder="Name of fertilizer" />
+                        <Label Text="Application Date" />
+                        <DatePicker />
 
-            <Label Text="Fertilizer Application Date" />
-            <DatePicker />
+                        <Label Text="Quantity Applied" />
+                        <Entry Keyboard="Numeric" Placeholder="Amount used" />
 
-            <Label Text="Fertilizer Quantity" />
-            <Entry Keyboard="Numeric" Placeholder="Dosage applied" />
+                        <Label Text="Fertilizer Type" />
+                        <Entry Placeholder="Name of fertilizer" />
 
+                        <Label Text="Fertilizer Application Date" />
+                        <DatePicker />
+
+                        <Label Text="Fertilizer Quantity" />
+                        <Entry Keyboard="Numeric" Placeholder="Dosage applied" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
             <!--  Health and Disease Monitoring  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Health and Disease Monitoring" />
+            <Border
+                Background="{AppThemeBinding Light={StaticResource White},
+                                             Dark={StaticResource Gray600}}"
+                StrokeShape="RoundRectangle 5"
+                StrokeThickness="0">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Border
+                        Padding="8"
+                        Background="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource Gray900}}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 5">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{StaticResource Gray900}"
+                                Opacity="0.7"
+                                Radius="10"
+                                Offset="0,0" />
+                        </Border.Shadow>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Health and Disease Monitoring"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                        Dark={StaticResource White}}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="HealthTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <VerticalStackLayout
+                        x:Name="healthlist"
+                        Padding="10"
+                        IsVisible="False">
+                        <Label Text="Observed Disease" />
+                        <Entry Placeholder="Name of disease" />
 
-            <Label Text="Observed Disease" />
-            <Entry Placeholder="Name of disease" />
+                        <Label Text="Disease Severity (Low/Med/High)" />
+                        <Entry Placeholder="Severity level" />
 
-            <Label Text="Disease Severity (Low/Med/High)" />
-            <Entry Placeholder="Severity level" />
+                        <Label Text="Disease Photographs" />
+                        <Entry Placeholder="Link or image path" />
 
-            <Label Text="Disease Photographs" />
-            <Entry Placeholder="Link or image path" />
+                        <Label Text="Pest Incidence" />
+                        <Entry Placeholder="Type of pest" />
 
-            <Label Text="Pest Incidence" />
-            <Entry Placeholder="Type of pest" />
+                        <Label Text="Pest Severity (Low/Med/High)" />
+                        <Entry Placeholder="Severity level" />
 
-            <Label Text="Pest Severity (Low/Med/High)" />
-            <Entry Placeholder="Severity level" />
+                        <Label Text="Treatment Applied" />
+                        <Entry Placeholder="Control measures taken" />
 
-            <Label Text="Treatment Applied" />
-            <Entry Placeholder="Control measures taken" />
+                        <Label Text="Nutrient Deficiency Symptoms" />
+                        <Entry Placeholder="E.g., yellowing leaves" />
 
-            <Label Text="Nutrient Deficiency Symptoms" />
-            <Entry Placeholder="E.g., yellowing leaves" />
-
-            <Label Text="Hailstorm/Wind Damage Reports" />
-            <Entry Placeholder="Weather-related damages" />
-
+                        <Label Text="Hailstorm/Wind Damage Reports" />
+                        <Entry Placeholder="Weather-related damages" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
             <!--  Yield and Productivity  -->
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Yield and Productivity" />
+            <Border
+                Background="{AppThemeBinding Light={StaticResource White},
+                                             Dark={StaticResource Gray600}}"
+                StrokeShape="RoundRectangle 5"
+                StrokeThickness="0">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="{StaticResource Gray900}"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="0,0" />
+                </Border.Shadow>
+                <VerticalStackLayout>
 
-            <Label Text="Fruit Set Percentage (%)" />
-            <Entry Keyboard="Numeric" Placeholder="% of flowers to fruits" />
+                    <Border
+                        Padding="8"
+                        Background="{AppThemeBinding Light={StaticResource White},
+                                                     Dark={StaticResource Gray900}}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 5">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{StaticResource Gray900}"
+                                Opacity="0.7"
+                                Radius="10"
+                                Offset="0,0" />
+                        </Border.Shadow>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Yield and Productivity"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                        Dark={StaticResource White}}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="yieldTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <VerticalStackLayout
+                        x:Name="yeildlist"
+                        Padding="10"
+                        IsVisible="False">
+                        <Label Text="Fruit Set Percentage (%)" />
+                        <Entry Keyboard="Numeric" Placeholder="% of flowers to fruits" />
 
-            <Label Text="Harvest Date" />
-            <DatePicker />
+                        <Label Text="Harvest Date" />
+                        <DatePicker />
 
-            <Label Text="Yield per Tree (kg)" />
-            <Entry Keyboard="Numeric" Placeholder="Enter yield" />
+                        <Label Text="Yield per Tree (kg)" />
+                        <Entry Keyboard="Numeric" Placeholder="Enter yield" />
 
-            <Label Text="Fruit Quality Parameters" />
-            <Entry Placeholder="Weight, Size, Color, Sugar" />
+                        <Label Text="Fruit Quality Parameters" />
+                        <Entry Placeholder="Weight, Size, Color, Sugar" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
             <Grid
                 Padding="20,5"
                 ColumnDefinitions="*,*"
@@ -146,15 +322,31 @@
                 <Button
                     Grid.Column="0"
                     Clicked="uploadclicked"
-                    CornerRadius="50"
-                    Text="Upload Data"
-                    TextColor="White" />
+                    CornerRadius="20"
+                    MaximumWidthRequest="300"
+                    Text="Upload Data">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="{StaticResource Gray900}"
+                            Opacity="0.7"
+                            Radius="10"
+                            Offset="0,0" />
+                    </Button.Shadow>
+                </Button>
                 <Button
                     Grid.Column="1"
-                    Clicked="uploadclicked"
-                    CornerRadius="50"
-                    Text="Save Data"
-                    TextColor="White" />
+                    Clicked="saveofflineclicked"
+                    CornerRadius="20"
+                    MaximumWidthRequest="300"
+                    Text="Save Data">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="{StaticResource Gray900}"
+                            Opacity="0.7"
+                            Radius="10"
+                            Offset="0,0" />
+                    </Button.Shadow>
+                </Button>
             </Grid>
 
 

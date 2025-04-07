@@ -63,7 +63,24 @@ namespace datacapture
         }
 
 
-
+        private async void saveofflineclicked(object sender, EventArgs e)
+        {
+            if (_imageFile == null)
+            {
+                await DisplayAlert("No Image", "Please select or take a photo first.", "OK");
+                return;
+            }
+            if (string.IsNullOrEmpty(TreeId.Text))
+            {
+                await DisplayAlert("No Tree ID", "Please scan the id first.", "OK");
+                return;
+            }
+            datalist.Name = App.treeidqr;
+            datalist.ImageData = _imageData;
+            datalist.ImageName = imageNameLabel.Text;
+            await _databaseService.SaveDatalistAsync(datalist);
+            await DisplayAlert("Success", "Image stored on device successfully!", "OK");
+        }
         private async void uploadclicked(object sender, EventArgs e)
         {
             if (_imageFile == null)
@@ -76,35 +93,39 @@ namespace datacapture
                 await DisplayAlert("No Tree ID", "Please scan the id first.", "OK");
                 return;
             }
+            if(Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+            {
+              var result= await DisplayAlert("No Internet", "Do you want to save it on the device", "Yes","No");
+                if (result)
+                {
+                    saveofflineclicked(sender,  e);
+                }
+                return;
+            }
 
-            datalist.Name= App.treeidqr;
-            datalist.ImageData = _imageData;
-            datalist.ImageName = imageNameLabel.Text;
-            await _databaseService.SaveDatalistAsync(datalist);
 
-            
-            await DisplayAlert("Success", "Image stored on device successfully!", "OK");
-            /*
-            using var content = new MultipartFormDataContent();
-            using var stream = await _imageFile.OpenReadAsync();
-            var fileContent = new StreamContent(stream);
-            fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
-
-            content.Add(fileContent, "file", _imageFile.FileName);
-
-            using var client = new HttpClient();
-            var response = await client.PostAsync("https://yourserver.com/api/upload", content);
-           
-            if (response.IsSuccessStatusCode)
-                await DisplayAlert("Success", "Image uploaded successfully!", "OK");
-            else
-                await DisplayAlert("Error", "Upload failed.", "OK");
-             */
         }
         private void OnPickerSelectedIndexChanged(object sender,EventArgs e)
         {
 
         }
+        private void phenologyTapped(object sender, EventArgs e)
+        {
+            phenologylist.IsVisible = !phenologylist.IsVisible;
+        }
+        private void ManagementTapped(object sender, EventArgs e)
+        {
+            managementlist.IsVisible = !managementlist.IsVisible;
+        }
+        private void HealthTapped(object sender, EventArgs e)
+        {
+            healthlist.IsVisible = !healthlist.IsVisible;   
+        }
+        private void yieldTapped(object sender, EventArgs e)
+        {
+            yeildlist.IsVisible = !yeildlist.IsVisible;
+        }
+        
 
 
     }
