@@ -41,9 +41,8 @@
                 Padding="30"
                 Background="{AppThemeBinding Light={StaticResource White},
                                              Dark={StaticResource Gray900}}"
-                Stroke="{AppThemeBinding Light={StaticResource White},
-                                         Dark={StaticResource Gray900}}"
-                StrokeShape="RoundRectangle 40,40,0,0">
+                StrokeShape="RoundRectangle 40,40,0,0"
+                StrokeThickness="0">
                 <VerticalStackLayout>
 
 
