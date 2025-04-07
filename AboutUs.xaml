@@ -6,28 +6,32 @@
     Title="About Us">
     <ScrollView>
         <VerticalStackLayout>
-
-            <VerticalStackLayout>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="Medium"
-                    HorizontalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    Text="Sher-e-Kashmir University of Agricultural Sciences  And Technology of Kashmir"
-                    VerticalOptions="Center" />
-                <Label
-                    FontSize="Small"
-                    HorizontalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    Text="Main Campus, Shalimar, Srinagar-190025"
-                    VerticalOptions="Center" />
+            <Border>
+                <VerticalStackLayout Padding="20">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Sher-e-Kashmir University of Agricultural Sciences  And Technology of Kashmir"
+                        VerticalOptions="Center" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Main Campus, Shalimar, Srinagar-190025"
+                        VerticalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+            <VerticalStackLayout Padding="20">
+                <Label Text="This application is developed to build a world-class data repository for agricultural and horticultural crops, enabling the collection, tagging, and analysis of plant-level data with high precision. By capturing rich, structured data—including phenological stages, growth patterns, input usage, pest and disease incidences, and microclimatic parameters—the app provides a foundation for developing advanced AI models and predictive analytics." />
+                <Label Text="Each plant is geo-tagged and uniquely identified through QR codes, ensuring traceable and scalable data acquisition across diverse agroclimatic zones. The platform integrates with sensors, mobile devices, and cloud storage to facilitate real-time data flow from field to database." />
+                <Label Text="The ultimate goal is to power a robust Decision Support System (DSS) for precision agriculture, aiding farmers, researchers, and policymakers in making informed, timely interventions—enhancing productivity, resource efficiency, and resilience to climate variability." />
             </VerticalStackLayout>
-
-            <Label
-                FontSize="Small"
-                HorizontalOptions="Fill"
-                HorizontalTextAlignment="Center"
-                Text="SKUAST-K is building a world-class team of researchers and engineers to leverage the  applications of Agri-4.0 technologies (Artificial Intelligence, Machine Learning, Deep  Learning, IoT and automation, drone and robotics) in data-driven and smart agricultural  practices for crop/soil monitoring, disease diagnosis and prediction, crop yield forecasts,  alerting the farmers about the changes in weather pattern and market fluctuations, generation  and dissemination of the crop and location specific advisories,  automation of the operations  using drones and Agri-bots, creating          e-market platforms like e-bioshops etc.  As such, the  team shall strive to build the state-of-art laboratory facilities in AI and ML, IoT and automation,  computational biology, cloud computing and fab lab for designing the sensors, IoTs and machines to work autonomously." />
+            <Border>
+                <Label Text="caiml@skuaskt.com" />
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
