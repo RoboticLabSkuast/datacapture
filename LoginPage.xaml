@@ -48,9 +48,9 @@
 
 
 
+                    <!--  username Field  -->
 
-
-                    <Grid Margin="0,30,0,0">
+                    <Grid Margin="0,20">
                         <Label
                             Margin="5,0,0,0"
                             FontSize="12"
@@ -58,13 +58,14 @@
                             TextColor="Gray" />
                         <Entry
                             x:Name="username"
-                            Margin="0,15,0,10"
+                            Margin="0,15,0,0"
                             ClearButtonVisibility="WhileEditing"
                             Keyboard="Email"
                             Placeholder="Enter username" />
                     </Grid>
 
                     <!--  Password Field  -->
+
                     <Grid>
                         <Label
                             Margin="5,0,0,0"
@@ -73,19 +74,23 @@
                             TextColor="Gray" />
                         <Entry
                             x:Name="password"
-                            Margin="0,15,0,10"
+                            Margin="0,15,0,0"
                             ClearButtonVisibility="WhileEditing"
                             IsPassword="True"
                             Placeholder="Enter password" />
                     </Grid>
-                    <HorizontalStackLayout>
+
+                    <Grid Margin="0,15" ColumnDefinitions="Auto,*">
                         <CheckBox
                             x:Name="rememberMe"
-                            Margin="0,0,0,10"
+                            Grid.Column="0"
                             VerticalOptions="Center"
                             Color="{StaticResource Primary}" />
-                        <Label Text="Remember me" VerticalOptions="Center" />
-                    </HorizontalStackLayout>
+                        <Label
+                            Grid.Column="1"
+                            Text="Remember me"
+                            VerticalOptions="Center" />
+                    </Grid>
 
 
                     <Label

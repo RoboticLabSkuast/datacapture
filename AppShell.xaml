@@ -7,6 +7,8 @@
     Title="datacapture"
     Shell.FlyoutBehavior="Flyout">
 
+
+
     <ShellContent
         Title="Orchard Data Schema"
         ContentTemplate="{DataTemplate local:MainPage}"
@@ -16,6 +18,7 @@
         Title="Upload Offline Data"
         ContentTemplate="{DataTemplate local:Offlinedata}"
         Route="Offlinedata" />
+
 
     <!--<ShellContent
         Title="View Data"

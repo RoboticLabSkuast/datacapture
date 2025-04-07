@@ -19,12 +19,15 @@
 
             <Button
                 Clicked="OnScanQrCodeClicked"
-                Text="Click Here for Scan QR Code"
-                TextColor="White" />
+                CornerRadius="50"
+                Text="Click Here for Scan QR Code" />
 
             <!--  Dynamic Data  -->
             <Label Text="Take a Photo" />
-            <Button Clicked="OnTakePhotoClicked" Text="Click Here To Take a Photo" />
+            <Button
+                Clicked="OnTakePhotoClicked"
+                CornerRadius="50"
+                Text="Click Here To Take a Photo" />
             <Label
                 x:Name="imageNameLabel"
                 FontAttributes="Bold"
@@ -135,13 +138,26 @@
 
             <Label Text="Fruit Quality Parameters" />
             <Entry Placeholder="Weight, Size, Color, Sugar" />
+            <Grid
+                Padding="20,5"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="10">
+
+                <Button
+                    Grid.Column="0"
+                    Clicked="uploadclicked"
+                    CornerRadius="50"
+                    Text="Upload Data"
+                    TextColor="White" />
+                <Button
+                    Grid.Column="1"
+                    Clicked="uploadclicked"
+                    CornerRadius="50"
+                    Text="Save Data"
+                    TextColor="White" />
+            </Grid>
 
 
-            <Button
-                Clicked="uploadclicked"
-                CornerRadius="12"
-                Text="Save Data"
-                TextColor="White" />
         </VerticalStackLayout>
     </ScrollView>
 
