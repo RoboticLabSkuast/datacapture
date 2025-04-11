@@ -1,19 +1,22 @@
 
 
+using datacapture.services;
 using System.Text.Json;
 
 namespace datacapture;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+    public Serverservice service;
+
+    public LoginPage()
 	{
 		InitializeComponent();
         
         BindingContext = this;
     }
 
-    private  void Login_Handler(object sender, EventArgs e)
+    private async void Login_Handler(object sender, EventArgs e)
     {
         File.Delete(App.saveornotpath);
         errorMessage.IsVisible = false;
@@ -30,7 +33,7 @@ public partial class LoginPage : ContentPage
             return;
         }
 
-        if (password.Text.Length < 8)
+        if (password.Text.Length < 2)
         {
             ShowError("Password must be at least 8 characters long");
             return;
@@ -38,6 +41,23 @@ public partial class LoginPage : ContentPage
 
         try
         {
+            service = new Serverservice();
+             string temp= await service.LoginAsync(username.Text, password.Text);
+            if(temp == "fail")
+            {
+                ShowError("Invalid username or password");
+                return;
+            }
+            else if (temp == "success")
+            {
+                App.username = username.Text;
+               
+            }
+            else
+            {
+                ShowError("Login failed: " + temp);
+                return;
+            }
             if (rememberMe.IsChecked)
             {
                 File.WriteAllText(App.saveornotpath, JsonSerializer.Serialize("1"));
